@@ -1,7 +1,7 @@
 package br.com.challenge2.view.validator;
 
 import br.com.challenge2.infrastructure.exception.AddressNotFoundException;
-import br.com.challenge2.infrastructure.repository.AddressRepository;
+import br.com.challenge2.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -12,10 +12,10 @@ import org.springframework.stereotype.Component;
 public class AddressRequestValidator {
 
     @Autowired
-    private AddressRepository addressRepository;
+    private AddressService addressService;
 
     public void validate(String id) {
-        if (!addressRepository.exists(id)) {
+        if (!addressService.exists(id)) {
             throw new AddressNotFoundException();
         }
     }

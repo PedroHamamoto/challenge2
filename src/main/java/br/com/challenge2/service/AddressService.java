@@ -37,4 +37,7 @@ public class AddressService {
         return addressRepository.save(address);
     }
 
+    public boolean exists(String id) {
+        return addressRepository.exists(id);
+    }
 }
