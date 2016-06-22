@@ -1,0 +1,5 @@
+# Creates the mongo user;
+use challenge2;
+db.createUser( { user: "root",
+                 pwd: "toor",
+                 roles: [ ] });
